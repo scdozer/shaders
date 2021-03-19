@@ -1,8 +1,8 @@
 import * as THREE from "three";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 // import lerp from "lerp";
 import { useLoader, useFrame } from "react-three-fiber";
-import { useGLTF } from "@react-three/drei";
+// import { useGLTF } from "@react-three/drei";
 // import jar from "../img/jarDraco.gltf";
 import "./shaders/trippy";
 import "./shaders/trippy2";

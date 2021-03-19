@@ -4,17 +4,17 @@ import Jar from "./jar.js";
 import { Canvas } from "react-three-fiber";
 import { OrbitControls } from "@react-three/drei";
 
-import img1 from "./../img/photo1.jpg";
+// import img1 from "./../img/photo1.jpg";
 
 export default function WebGL() {
   let speed = useRef(0);
-  const onWheel = (e) => {
-    return (speed.current = e.deltaY);
-  };
-  function onPan(event, info) {
-    const delta = info.delta.y > 0 ? info.delta.y : -1 * info.delta.x;
-    return (speed.current += -1 * delta * 0.0009);
-  }
+  // const onWheel = (e) => {
+  //   return (speed.current = e.deltaY);
+  // };
+  // function onPan(event, info) {
+  //   const delta = info.delta.y > 0 ? info.delta.y : -1 * info.delta.x;
+  //   return (speed.current += -1 * delta * 0.0009);
+  // }
 
   return (
     <>
