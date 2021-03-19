@@ -9,7 +9,7 @@ const rotation = `
 
     return mat3(
       c, 0.0, -s,
-      0.0, 6.0, 0.0,
+      0.0, 0.0, 0.0,
       s, 0.0, c
     );
   }
@@ -26,8 +26,8 @@ const Trippy = shaderMaterial(
     uNoiseDensity: 1.5,
     uNoiseStrength: 0.2,
     uFrequency: 3.0,
-    uAmplitude: 6.0,
-    uIntensity: 10.0,
+    uAmplitude: 0.5,
+    uIntensity: 2.0,
     vNormal: 0,
     vDistort: 0,
   },
@@ -45,9 +45,9 @@ const Trippy = shaderMaterial(
   void main() {
     float t = uTime * uSpeed;
     float distortion = pnoise((normal + t) * uNoiseDensity, vec3(10.0)) * uNoiseStrength;
-    vec3 pos = position + (normal * distortion);
+    vec3 pos = position + (normal * (distortion *0.05));
     float angle = sin(uv.y * uFrequency + t) * uAmplitude;
-    pos = rotateY(pos, angle);    
+    // pos = rotateY(pos, angle);
     // vNormal = normal;
     vDistort = distortion;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.);
@@ -64,11 +64,11 @@ const Trippy = shaderMaterial(
     }   
     
     void main() {
-  float distort = vDistort * uIntensity;
-  vec3 brightness = vec3(0.5, 0.5, 0.5);
-  vec3 contrast = vec3(0.5, 0.5, 0.5);
-  vec3 oscilation = vec3(1.0, 1.0, 1.0);
-  vec3 phase = vec3(0.0, 0.1, 0.2);
+    float distort = vDistort * uIntensity;
+    vec3 brightness = vec3(0.5, 0.5, 0.5	);
+    vec3 contrast = vec3(0.5, 0.5, 0.5);
+    vec3 oscilation = vec3(1.0, 1.0, 1.0);
+    vec3 phase = vec3(0.30, 0.20, 0.20);
 
   vec3 color = cosPalette(distort, brightness, contrast, oscilation, phase);
 

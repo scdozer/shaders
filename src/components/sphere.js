@@ -1,4 +1,4 @@
-// import * as THREE from "three";
+import * as THREE from "three";
 import React, { useRef, useState } from "react";
 // import lerp from "lerp";
 import { useLoader, useFrame } from "react-three-fiber";
@@ -8,7 +8,7 @@ export default function Sphere({ img, speed }) {
   const mesh = useRef();
   const geometry = useRef();
   const wack = useRef();
-  //   const texture1 = useLoader(THREE.TextureLoader, img);
+  const texture = useLoader(THREE.TextureLoader, img);
 
   useFrame(({ clock }) => {
     // console.log(speed.current);
@@ -24,7 +24,7 @@ export default function Sphere({ img, speed }) {
         attach="material"
         toneMapped={false}
         // wireframe={true}
-        // texture={texture1}
+        texture={texture}
       />
     </mesh>
   );

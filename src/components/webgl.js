@@ -1,8 +1,8 @@
 import React, { Suspense, useRef } from "react";
 // import WobblePlane from "./plane.js";
-import Sphere from "./sphere.js";
+import Jar from "./jar.js";
 import { Canvas } from "react-three-fiber";
-import { OrbitControls } from "drei";
+import { OrbitControls } from "@react-three/drei";
 
 import img1 from "./../img/photo1.jpg";
 
@@ -17,14 +17,30 @@ export default function WebGL() {
   }
 
   return (
-    <div className="canvas">
-      <Canvas colorManagement>
-        <OrbitControls />
-        <Suspense fallback={null}>
-          {/* <WobblePlane img={img1} speed={speed} /> */}
-          <Sphere img={img1} speed={speed} />
-        </Suspense>
-      </Canvas>
-    </div>
+    <>
+      <div className="canvas">
+        <Canvas colorManagement camera={{ position: [-20, 0, 15] }}>
+          {/* <ambientLight intensity={10} /> */}
+          <OrbitControls />
+          <Suspense fallback={null}>
+            <Jar position={[0, 0, 5]} />
+            <Jar position={[0, 0, -5]} />
+            <Jar position={[0, 0, 0]} />
+            <Jar position={[0, 0, 10]} />
+            <Jar position={[0, 0, -10]} />
+
+            <Jar position={[-4, 0, 2.5]} />
+            <Jar position={[-4, 0, -2.5]} />
+            <Jar position={[-4, 0, 7.5]} />
+            <Jar position={[-4, 0, -7.5]} />
+            <Jar position={[-4, 0, -12.5]} />
+            <mesh position={[-1.5, -3, -2]}>
+              <boxBufferGeometry args={[10, 1, 30]} />
+              <meshBasicMaterial color={"white"} />
+            </mesh>
+          </Suspense>
+        </Canvas>
+      </div>
+    </>
   );
 }
