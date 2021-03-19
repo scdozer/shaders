@@ -1,4 +1,4 @@
-import React, { Suspense, useRef } from "react";
+import React, { Suspense } from "react";
 // import WobblePlane from "./plane.js";
 import Jar from "./jar.js";
 import { Canvas } from "react-three-fiber";
