@@ -7,7 +7,7 @@ import { OrbitControls } from "@react-three/drei";
 // import img1 from "./../img/photo1.jpg";
 
 export default function WebGL() {
-  let speed = useRef(0);
+  // let speed = useRef(0);
   // const onWheel = (e) => {
   //   return (speed.current = e.deltaY);
   // };
