@@ -23,6 +23,7 @@ export default function WebGL() {
           <a
             href="https://foundation.app/popopshuv/digital-dispensary-ut-sour-diesel-9919"
             target="_blank"
+            rel="noreferrer"
           >
             buy nft
           </a>
