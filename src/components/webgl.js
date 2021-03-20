@@ -18,6 +18,16 @@ export default function WebGL() {
 
   return (
     <>
+      <div className="buynow">
+        <h1>
+          <a
+            href="https://foundation.app/popopshuv/digital-dispensary-ut-sour-diesel-9919"
+            target="_blank"
+          >
+            buy nft
+          </a>
+        </h1>
+      </div>
       <div className="canvas">
         <Canvas colorManagement camera={{ position: [-20, 0, 15] }}>
           {/* <ambientLight intensity={10} /> */}
